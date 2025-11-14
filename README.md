@@ -90,6 +90,45 @@ The bot needs:
 - Use External Emojis
 - Manage Roles (for private VC permissions)
 
+## Replit Hosting
+
+The bot includes a keep-alive HTTP server that runs on port 3000 to prevent the bot from going to sleep.
+
+### Setup on Replit:
+
+1. **Import from GitHub:**
+   - Go to Replit
+   - Click "Import from GitHub"
+   - Enter: `https://github.com/rio-sec/Dx-bot-v2.git`
+
+2. **Set Environment Variables:**
+   - Go to Secrets tab (lock icon)
+   - Add these secrets:
+     - `DISCORD_TOKEN` - Your bot token
+     - `MONGODB_URI` - MongoDB connection string (optional)
+     - `CLIENT_ID` - Your bot client ID
+     - `GUILD_ID` - Your server ID
+
+3. **Run the Bot:**
+   - Click "Run" button
+   - The bot will start automatically
+
+4. **Keep Bot Alive:**
+   - The bot includes a built-in HTTP server on port 3000
+   - For additional uptime, use a service like UptimeRobot:
+     - Create account at https://uptimerobot.com
+     - Add a new monitor
+     - Type: HTTP(s)
+     - URL: `https://your-repl-url.repl.co` (or use the HTTP server endpoint)
+     - Interval: 5 minutes
+
+5. **Deploy Commands:**
+   - Run `npm run deploy` in the Replit shell after setting up environment variables
+
+### Keep-Alive Server
+
+The bot automatically starts an HTTP server on port 3000 that responds to requests. This helps keep the bot active on Replit.
+
 ## Support
 
 Built by RIO for DEATH-X gang.
